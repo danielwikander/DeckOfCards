@@ -43,6 +43,8 @@ ClassOneTest.java
       Testmethod()
 ```
 This structure gives a good overview of which test belongs to which method. 
-Each testmethod is named using the following format:
 
+Each testmethod is named using the following format:
+```
 expectedBehavior_conditionUnderTest()
+```
