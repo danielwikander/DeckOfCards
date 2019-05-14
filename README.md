@@ -8,8 +8,7 @@ cards can be pulled from the top of the deck.
 ##### Deck:
   I decided to use an ArrayList as a datastructure for
   the deck because of its amortized O(1) time complexity
-  for most tasks. The dynamic memory allocation of an ArrayList
-  makes sure we are not using any unnecessary space when the deck is not full.
+  for most tasks.
   Using the List structure also allows
   for the Collections.sort() and Collections.shuffle() 
   to sort and shuffle the deck using minimal time and space.
