@@ -21,7 +21,7 @@ cards can be pulled from the top of the deck.
 ##### Card:
   I decided to implement the Comparable interface on the Card class
   so that they can be compared for sorting. The class uses the compareTo()
-  method to compare the ordinal values from the cards Suit and Rank enums 
+  method to compare the ordinal values (their position in their respective enum declaration) from the cards Suit and Rank enums 
   (Suit.java, Rank.java). 
   
 ##### Tests:
