@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * class containing the relevant tests for that method.
  *
  * The tests are named using the following format:
- * expectedBehavior_stateUnderTest()
+ * expectedBehavior_conditionUnderTest()
  */
 class DeckTest {
     private Deck deck;
@@ -40,10 +40,26 @@ class DeckTest {
     }
 
     @Nested
-    class shuffleTest {
+    class shuffleTests {
 
         @Test
-        void isTrue_ifDeckIsShuffled() {
+        void isTrue_ifFullDeckIsShuffled() {
+            deck.shuffle();
+            ArrayList<Card> shuffledDeck = deck.getCardsInDeck();
+
+            boolean shuffled = false;
+            for(int i = 1; i < shuffledDeck.size(); i++) {
+                if(shuffledDeck.get(i - 1).compareTo(shuffledDeck.get(i)) > 0) {
+                    shuffled = true;
+                    break;
+                }
+            }
+            assertTrue(shuffled);
+        }
+
+        @Test
+        void isTrue_ifNonFullDeckIsShuffled() {
+            deck.pull();
             deck.shuffle();
             ArrayList<Card> shuffledDeck = deck.getCardsInDeck();
 
@@ -59,14 +75,28 @@ class DeckTest {
     }
 
     @Nested
-    class sortTest {
+    class sortTests {
 
         @Test
-        void isTrue_ifDeckIsSorted() {
+        void isTrue_ifFullDeckIsSorted() {
             deck.sort();
             ArrayList<Card> shuffledDeck = deck.getCardsInDeck();
             boolean sorted = true;
             for(int i = 1; i < shuffledDeck.size(); i++) {
+                if (shuffledDeck.get(i - 1).compareTo(shuffledDeck.get(i)) > 0) {
+                    sorted = false;
+                }
+            }
+            assertTrue(sorted);
+        }
+
+        @Test
+        void isTrue_ifNonFullDeckIsSorted() {
+            deck.pull();
+            deck.sort();
+            ArrayList<Card> shuffledDeck = deck.getCardsInDeck();
+            boolean sorted = true;
+            for (int i = 1; i < shuffledDeck.size(); i++) {
                 if (shuffledDeck.get(i - 1).compareTo(shuffledDeck.get(i)) > 0) {
                     sorted = false;
                 }

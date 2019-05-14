@@ -1,5 +1,5 @@
 /**
- * Represents a card from a card deck.
+ * Represents a single card from a deck of cards.
  */
 public class Card implements Comparable<Card> {
     private Rank rank;
@@ -21,12 +21,12 @@ public class Card implements Comparable<Card> {
     /**
      * Compares two cards for sorting purposes.
      * This method uses the ordinal values
-     * of the suit and rank enums to calculate
-     * the delta between two cards.
-     * It starts by comparing the suits.
-     * If the suits are equal, it compares ranks.
-     * The delta is the integer value difference
-     * between the two cards.
+     * of the suit and rank enums (Suit.Java, Rank.java)
+     * to calculate the delta between the cards.
+     * Suits are compared first. If the suits are equal
+     * then ranks are compared.
+     * The method returns an integer with the value
+     * difference between the two cards.
      *
      * @param card The card to compare to.
      * @return     0 if the two cards are equal,

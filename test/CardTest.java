@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * class containing the relevant tests for that method.
  *
  * The tests are named using the following format:
- * expectedBehavior_stateUnderTest()
+ * expectedBehavior_conditionUnderTest()
  */
 class CardTest {
 

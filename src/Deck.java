@@ -4,17 +4,6 @@ import java.util.Collections;
 /**
  * Represents a standard card deck with 52 cards.
  * (No jokers)
- *
- * I decided to use an ArrayList as a datastructure for
- * the deck because of its amortized O(1) time complexity
- * for most tasks. Using a List structure also allows
- * for the Collections.sort() and Collections.shuffle()
- * to sort and shuffle the deck using minimal time and space.
- * Another benefit is that we can swap the datastructure to
- * other List structures with minimal effort if the systems
- * requirements change. That means we don't need to change
- * shuffle or sort methods, as they will adapt to the
- * given structure.
  */
 class Deck {
 
