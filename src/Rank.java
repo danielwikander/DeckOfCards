@@ -3,7 +3,7 @@
  * (and suits, see Suit.java)
  * allows us to rank the suits after
  * their ordinal value in the enum.
- * eg. ACE = 1, TWO = 2 etc.
+ * eg. ACE = 0, TWO = 1 etc.
  */
 enum Rank {
     ACE,

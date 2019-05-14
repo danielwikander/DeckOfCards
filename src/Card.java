@@ -1,4 +1,6 @@
-
+/**
+ * Represents a card from a card deck.
+ */
 public class Card implements Comparable<Card> {
     private Rank rank;
     private Suit suit;
@@ -19,7 +21,7 @@ public class Card implements Comparable<Card> {
     /**
      * Compares two cards for sorting purposes.
      * This method uses the ordinal values
-     * of the suits and ranks enums to calculate
+     * of the suit and rank enums to calculate
      * the delta between two cards.
      * It starts by comparing the suits.
      * If the suits are equal, it compares ranks.

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ * Tests are written using JUnit 5.2
+ *
  * This class contains all tests for the Deck class.
  * Each method from the Deck class has a nested
  * class containing the relevant tests for that method.

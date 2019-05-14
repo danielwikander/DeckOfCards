@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ * Tests are written using JUnit 5.2
+ *
  * This class contains all tests for the Card class.
  * Each method from the Card class has a nested
  * class containing the relevant tests for that method.
@@ -20,11 +22,8 @@ class CardTest {
 
     private Card card;
 
-    /**
-     * Boundary tests for the Card constructor.
-     */
     @Nested
-    class CardConstructorTest {
+    class CardConstructorTests {
 
         @AfterEach
         void tearDown() {
@@ -101,9 +100,6 @@ class CardTest {
         }
     }
 
-    /**
-     * Tests for getCardRank()
-     */
     @Nested
     class getCardRankTest {
 
@@ -118,9 +114,6 @@ class CardTest {
 
     }
 
-    /**
-     * Tests for getCardSuit()
-     */
     @Nested
     class getCardSuitTest {
 
@@ -135,9 +128,6 @@ class CardTest {
 
     }
 
-    /**
-     * Tests for compareTo()
-     */
     @Nested
     class compareToTests {
 
@@ -227,5 +217,4 @@ class CardTest {
             assertTrue(delta < 0);
         }
     }
-    
 }

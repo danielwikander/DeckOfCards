@@ -11,9 +11,10 @@ import java.util.Collections;
  * for the Collections.sort() and Collections.shuffle()
  * to sort and shuffle the deck using minimal time and space.
  * Another benefit is that we can swap the datastructure to
- * other List structures with minimal effort (no need to swap
- * shuffle or sort methods, as they will adapt accordingly)
- * if the systems requirements should change.
+ * other List structures with minimal effort if the systems
+ * requirements change. That means we don't need to change
+ * shuffle or sort methods, as they will adapt to the
+ * given structure.
  */
 class Deck {
 
