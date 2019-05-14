@@ -17,7 +17,15 @@ public class Card implements Comparable<Card> {
     }
 
     /**
-     * Compares two cards for sorting.
+     * Compares two cards for sorting purposes.
+     * This method uses the ordinal values
+     * of the suits and ranks enums to calculate
+     * the delta between two cards.
+     * It starts by comparing the suits.
+     * If the suits are equal, it compares ranks.
+     * The delta is the integer value difference
+     * between the two cards.
+     *
      * @param card The card to compare to.
      * @return     0 if the two cards are equal,
      *             negative if the card is greater than this card,
@@ -25,10 +33,9 @@ public class Card implements Comparable<Card> {
      */
     @Override
     public int compareTo(Card card) {
-        int suitComparison = this.suit.compareTo(card.suit);
-        // Compares suits first. If the suits are equal, compares the ranks.
-        if (suitComparison != 0) {
-            return suitComparison;
+        int delta = this.suit.compareTo(card.suit);
+        if (delta != 0) {
+            return delta;
         } else {
             return this.rank.compareTo(card.rank);
         }

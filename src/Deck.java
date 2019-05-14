@@ -1,34 +1,57 @@
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Stack;
 
+/**
+ * Represents a standard card deck with 52 cards.
+ * (No jokers)
+ *
+ * I decided to use an ArrayList as a datastructure for
+ * the deck because of its amortized O(1) time complexity
+ * for most tasks. Using a List structure also allows
+ * for the Collections.sort() and Collections.shuffle()
+ * to sort and shuffle the deck using minimal time and space.
+ * Another benefit is that we can swap the datastructure to
+ * other List structures with minimal effort (no need to swap
+ * shuffle or sort methods, as they will adapt accordingly)
+ * if the systems requirements should change.
+ */
 class Deck {
 
-    private Stack<Card> cardsInDeck;
+    private ArrayList<Card> cardsInDeck;
 
     Deck() {
-        cardsInDeck = new Stack<>();
+        // Reserves 52 memory positions to prevent
+        // re-allocations during first initialization.
+        cardsInDeck = new ArrayList<>(52);
         produceCards();
     }
 
     /**
-     * Produces a deck of cards.
+     * Fills the deck with cards.
      */
     private void produceCards() {
         for (int i = 0; i < Suit.values().length; i++) {
             for (int j = 0; j < Rank.values().length; j++) {
-                cardsInDeck.add(new Card(Suit.values()[i], Rank.values()[j]));
+                cardsInDeck.add(new Card(
+                        Suit.values()[i],
+                        Rank.values()[j]));
             }
         }
     }
 
     /**
      * Sorts the deck.
+     * Collections.sort() uses a modified mergesort
+     * with a time complexity of O(n log n).
      */
     void sort() {
         Collections.sort(cardsInDeck);
     }
 
-    // Shuffles the deck
+    /**
+     * Shuffles the deck.
+     * Runs in O(N).
+     */
     void shuffle() {
         Collections.shuffle(cardsInDeck);
     }
@@ -37,7 +60,7 @@ class Deck {
      * Pulls and prints the top card from the deck.
      */
     void pull() {
-        Card card = cardsInDeck.pop();
+        Card card = cardsInDeck.remove(cardsInDeck.size() - 1);
         String cardSuit = card.getCardSuit().name();
         String cardRank = card.getCardRank().name();
         String format = "%-5s %-7s\n";
@@ -48,10 +71,12 @@ class Deck {
      * Pulls and prints all cards from the deck, one by one.
      */
     void pullAndPrintAllCards() {
-        System.out.println("Pulling all cards in the deck, one by one:");
         while (!cardsInDeck.isEmpty()) {
             pull();
         }
     }
 
+    ArrayList<Card> getCardsInDeck() {
+        return cardsInDeck;
+    }
 }
