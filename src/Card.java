@@ -24,9 +24,8 @@ public class Card implements Comparable<Card> {
      * of the suit and rank enums (Suit.Java, Rank.java)
      * to calculate the delta between the cards.
      * Suits are compared first. If the suits are equal
-     * then ranks are compared.
-     * The method returns an integer with the value
-     * difference between the two cards.
+     * then ranks are compared. Returns an integer with
+     * the value difference between the two cards.
      *
      * @param card The card to compare to.
      * @return     0 if the two cards are equal,

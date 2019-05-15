@@ -10,7 +10,7 @@ class CardShuffler {
         int n = cards.size();
         Random random = new Random();
         random.nextInt();
-        // Go through list, swap card with random card above
+        // Go through list, swap card with random card between i and n
         for (int i = 0; i < n; i++) {
             int change = i + random.nextInt(n - i);
             swap(cards, i, change);

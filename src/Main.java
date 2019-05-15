@@ -15,5 +15,6 @@ public class Main {
         deck3.sort();
         System.out.println("\nDeck 3. Shuffled and sorted:\n");
         deck3.pullAndPrintAllCards();
+
     }
 }

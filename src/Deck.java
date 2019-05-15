@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Represents a standard card deck with 52 cards.
@@ -35,7 +34,7 @@ class Deck {
      * with a time complexity of O(n log n).
      *
      * An alternative mergesort implementation is
-     * also provided (CardSorter.java)
+     * also provided (CardSorter.java) also O(n log n).
      */
     void sort() {
         //Collections.sort(cardsInDeck);
@@ -58,11 +57,15 @@ class Deck {
      * Pulls and prints the top card from the deck.
      */
     void pull() {
-        Card card = cardsInDeck.remove(cardsInDeck.size() - 1);
-        String cardSuit = card.getCardSuit().name();
-        String cardRank = card.getCardRank().name();
-        String format = "%-5s %-7s\n";
-        System.out.format(format, cardRank, cardSuit);
+        if (!cardsInDeck.isEmpty()) {
+            Card card = cardsInDeck.remove(cardsInDeck.size() - 1);
+            String cardSuit = card.getCardSuit().name();
+            String cardRank = card.getCardRank().name();
+            String format = "%-5s %-7s\n";
+            System.out.format(format, cardRank, cardSuit);
+        } else {
+            System.err.println("DECK EMPTY");
+        }
     }
 
     /**

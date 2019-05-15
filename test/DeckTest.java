@@ -1,10 +1,12 @@
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.ArrayList;
 
 /**
  * Tests are written using JUnit 5.2
@@ -108,12 +110,34 @@ class DeckTest {
     @Nested
     class pullTest {
 
+        // Streams for analyzing System.err output
+        private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        private final PrintStream originalErr = System.err;
+
+        @BeforeEach
+        void setUpErrorStream() {
+            System.setErr(new PrintStream(errContent));
+        }
+
+        @AfterEach
+        void restoreErrorStream() {
+            System.setErr(originalErr);
+        }
+
         @Test
         void isTrue_ifCardIsPulledFromDeck() {
             int amountOfCardsInDeck = deck.getCardsInDeck().size();
             deck.pull();
             assertEquals(deck.getCardsInDeck().size(),
                     amountOfCardsInDeck - 1);
+        }
+
+        @Test
+        void isTrue_ifPrintsWhenDeckEmpty() {
+            deck.pullAndPrintAllCards();
+            deck.pull();
+            assertEquals("DECK EMPTY\n",
+                    errContent.toString());
         }
     }
 
