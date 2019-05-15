@@ -4,7 +4,6 @@ A simple deck of cards in Java.
 The deck can be shuffled and sorted and
 cards can be pulled from the top of the deck.
 
-#### Design decisions:
 ##### Deck:
   Using the ArrayList structure allows
   for the Collections.sort() and Collections.shuffle() 
@@ -44,7 +43,6 @@ ClassOneTest.java
       Testmethod()
       Testmethod()
 ```
-This structure gives a good overview of which test belongs to which method. 
 
 Each testmethod is named using the following format:
 ```
