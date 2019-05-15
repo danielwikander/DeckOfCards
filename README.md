@@ -6,10 +6,7 @@ cards can be pulled from the top of the deck.
 
 #### Design decisions:
 ##### Deck:
-  I decided to use an ArrayList as a datastructure for
-  the deck because of its amortized O(1) time complexity
-  for most tasks.
-  Using the List structure also allows
+  Using the ArrayList structure allows
   for the Collections.sort() and Collections.shuffle() 
   to sort and shuffle the deck using minimal time and space.
   I have also added my own mergesort and shuffle implementations 
