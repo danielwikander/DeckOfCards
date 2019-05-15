@@ -108,7 +108,7 @@ class DeckTest {
     }
 
     @Nested
-    class pullTest {
+    class pullTests {
 
         // Streams for analyzing System.err output
         private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();

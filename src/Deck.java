@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Represents a standard card deck with 52 cards.
@@ -32,24 +33,32 @@ class Deck {
      * Sorts the deck.
      * Collections.sort() uses a modified mergesort
      * with a time complexity of O(n log n).
-     *
-     * An alternative mergesort implementation is
-     * also provided (CardSorter.java) also O(n log n).
      */
     void sort() {
-        //Collections.sort(cardsInDeck);
+        Collections.sort(cardsInDeck);
+    }
+
+    /*
+    * My own mergesort implementation. (CardSorter.java)
+    * Time complexity: O(n log n).
+    */
+    void alternativeSort() {
         CardSorter.mergeSort(cardsInDeck);
     }
 
     /**
      * Shuffles the deck.
      * Runs in O(N).
-     *
-     * An alternative shuffle implementation is
-     * also provided (CardShuffler.java)
      */
     void shuffle() {
-        //Collections.shuffle(cardsInDeck);
+        Collections.shuffle(cardsInDeck);
+    }
+
+    /**
+     * My own shuffle implementation. (CardShuffler.java)
+     * Runs in O(N).
+     */
+    void alternativeShuffle() {
         CardShuffler.shuffle(cardsInDeck);
     }
 

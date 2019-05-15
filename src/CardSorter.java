@@ -27,11 +27,10 @@ class CardSorter {
     }
 
     /**
-     * Sorts by recursively dividing the list until they
-     * hold only one card each. Then merges the list together,
-     * comparing the cards and allocating them accordingly with
-     * each merge.
-     *
+     * Sorts by recursively dividing lists until they
+     * hold only one card each. Then merges the lists together,
+     * comparing the cards and allocating them in the
+     * correct order with each merge.
      * @param cards The cards to sort.
      */
     static void mergeSort(final ArrayList<Card> cards) {
