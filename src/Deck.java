@@ -33,17 +33,25 @@ class Deck {
      * Sorts the deck.
      * Collections.sort() uses a modified mergesort
      * with a time complexity of O(n log n).
+     *
+     * An alternative mergesort implementation is
+     * also provided (CardSorter.java)
      */
     void sort() {
-        Collections.sort(cardsInDeck);
+        //Collections.sort(cardsInDeck);
+        CardSorter.mergeSort(cardsInDeck);
     }
 
     /**
      * Shuffles the deck.
      * Runs in O(N).
+     *
+     * An alternative shuffle implementation is
+     * also provided (CardShuffler.java)
      */
     void shuffle() {
-        Collections.shuffle(cardsInDeck);
+        //Collections.shuffle(cardsInDeck);
+        CardShuffler.shuffle(cardsInDeck);
     }
 
     /**
