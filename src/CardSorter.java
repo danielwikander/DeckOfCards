@@ -14,6 +14,7 @@ class CardSorter {
     private static ArrayList<Card> merge(final ArrayList<Card> left, final ArrayList<Card> right) {
         final ArrayList<Card> merged = new ArrayList<>();
         while (!left.isEmpty() && !right.isEmpty()) {
+            // Compares cards from both lists and allocates to new list accordingly.
             if (left.get(0).compareTo(right.get(0)) <= 0) {
                 merged.add(left.remove(0));
             } else {
